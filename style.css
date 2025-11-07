@@ -1,4 +1,103 @@
-body{
-color: blue;
-font-size: 40px;
+/* significa tudo com relação a pagina
+-- configuração inical do projeto
+-- font-family escolhe a fonte (escolha pessoal)
+-- padding é o espaço interno entre o conteúdo de um elemento e sua borda
+-- box-sizing: border-box; é uma propriedade CSS 
+que define como o tamanho de um elemento é calculado.
+*/
+
+*{
+    margin: 0;;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
+/*
+:root {
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255,255,255, 0.1);
+    --vidroPretp:  rgba(0, 0, 0, 0.1);
+    --corTransparente rgba(15,23,42, 0.8)
+      color: #dc1b11;  cor do texto
+
+}
+    */
+
+/* body: e o conteudo da pagina*/
+
+/* configurando a cor do fundo  da página*/
+body{
+    background-color:#000000; /* cor do fundo*/
+    color:#e2e8f0;
+  
+}
+
+.navegacao{
+ width: 100%; /*largura do menu em relação a largura da página*/
+ top: 0; /*menu sempre ficar no topo*/
+ position:fixed; /* deixa o menu fixo*/
+ background:  rgba(15,23,42, 0.8); /* COR DO FUNDO COM TRANSPARÊNCIA*/
+ padding: 1.5rem; /* espaço interno do menu*/
+ z-index: 100; /* MENU FICA NA FRENTE DO CONTEÚDO DA PÁGINA*/
+}
+
+.menu {
+    display: flex; /* os itens ficam do lado do outro*/
+    justify-content: center; /* itens ficam alinhados no centro*/
+    gap: 3rem; /* distantcia dos itens*/
+    list-style: none; /* desativa os marcadores da lista */
+}
+
+.menu-link{
+    text-decoration: none;/* tira sublinhado*/
+    color: #e2e8f0;/*cor da letra do menu*/
+    font-weight: 500; /**/
+    position:relative; /*permite o elemento ser deslocado deixando espaço original reservado*/
+    padding: 0.5 0;/* espaço 0.5rem para cima e baixo e 0 para os lados*/
+    
+}
+/* Cria um pseudo-elemento antes do conteúdo */
+.menu-link::before{
+    content:''; /*define conteudo vazio*/
+    height: 2px; /*altura do elemento (traço)*/
+    width: 0; /*largura*/
+    position:absolute;/*permite utilizar elementos button e left */
+    bottom: 0; /*alinha o elemento a parte inferir do pai*/
+    left:0; /* Alinha o elemento à parte esquerda do pai */
+    background:linear-gradient(90deg, #4f46e5,#7c3aed); /* no traço*/
+    transition: width 0.5s ease; /*transição suave na largura*/
+}
+
+
+/* : hover -->  apenas quando mause passa em cima */
+.menu-link:hover:before{
+    width: 100%;
+}
+
+/* Alinhando Texto e Foto */
+
+.principal{
+    min-height: 100vh; /* Altura mínima tela */
+    display: flex; /* Ativa flexbox layout */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Direção coluna */
+}
+
+.div-foto{
+    text-align: center; /* Centraliza texto */
+}
+
+.foto-perfil{
+    width: 200px; /* Define largura */
+    height: 200px; /* Define altura */
+    Box-shadow: 0 0 20px rgba(79, 70, 229, 0.3); /* Sombra externa */
+    border-radius:50%; /* Arredonda bordas */
+    border: 4px solid rgba(255,255,255, 0.1); /* Borda vidro */
+}
+
